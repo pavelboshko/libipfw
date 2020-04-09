@@ -37,7 +37,7 @@ void connection::stop()
 
 	_is_closed = true;
 
-	 boost::system::error_code ignore;
+	boost::system::error_code ignore;
 	_socket.shutdown(boost::asio::ip::tcp::socket::shutdown_both, ignore);
 	_socket.close(ignore);
 }

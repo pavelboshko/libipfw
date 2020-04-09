@@ -85,7 +85,7 @@ tcp_session::tcp_session(const std::shared_ptr<tcp_packet>&  sync_packet,
 
 	auto connected_fn = [this]() {
 		ipfw_logger->debug( " tcp_session : {} connection: connected",   _id);
-//		forward_packets(); TODO
+		//		forward_packets(); TODO
 	};
 
 	auto disconnected_fn = [this]() {

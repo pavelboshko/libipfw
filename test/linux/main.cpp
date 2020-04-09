@@ -87,8 +87,8 @@ void init_log() {
 }
 
 
-// example sudo ./ipfw_test --resource tls-mobile.securitycode.ru
-// wget http://tls-mobile.securitycode.ru:443/4mb
+// example sudo ./ipfw_test --resource resource.example.ru
+// wget http://resource.example.ru:443/4mb
 int main(int argc, char *argv[])
 {
 	po::options_description desc;

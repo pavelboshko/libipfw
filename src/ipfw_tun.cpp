@@ -47,9 +47,9 @@ std::shared_ptr<ipfw> ipfw_tun::create_ipfw(const std::string & fw_https_host, u
 
 	ipfw_args args {
 		._http_fw_host =  fw_http_host,
-		._http_fw_port = fw_http_port,
-		._https_fw_host = fw_https_host,
-		._https_fw_port = fw_https_port
+				._http_fw_port = fw_http_port,
+				._https_fw_host = fw_https_host,
+				._https_fw_port = fw_https_port
 	};
 
 	_ipfw_callbacks._on_ip_packet = [this](const std::vector<uint8_t> && w_data) {

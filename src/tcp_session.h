@@ -41,8 +41,8 @@ private:
 	std::shared_ptr<tcp_session_fsm> _fsm;
 	std::vector<uint8_t> _dump;
 	const ipfw_args _ipfw_args;
-//	TODO
-//	std::queue<std::shared_ptr<tcp_packet>> _snd_data_queue;
+	//	TODO
+	//	std::queue<std::shared_ptr<tcp_packet>> _snd_data_queue;
 
 };
 

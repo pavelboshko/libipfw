@@ -38,7 +38,7 @@ public:
 	typedef std::function<void (state, state)> onStateCahange_t;
 
 	tcp_session_fsm(const onStateCahange_t && state_fn, size_t id);
-	void on_incomming_tcp_packet(const std::shared_ptr<tcp_packet> & packet);	
+	void on_incomming_tcp_packet(const std::shared_ptr<tcp_packet> & packet);
 	state get_state();
 	void on_sent_rst();
 	void on_sent_fin();

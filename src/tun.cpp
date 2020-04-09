@@ -15,7 +15,7 @@ int tun::alloc_tun(const std::string &if_name)
 {
 	auto _tun_handle = ::open("/dev/net/tun", O_RDWR);
 	if (_tun_handle < 0) {
-			throw std::runtime_error("Failed to open file /dev/net/tun");
+		throw std::runtime_error("Failed to open file /dev/net/tun");
 	}
 
 	ifreq ifr;
@@ -24,7 +24,7 @@ int tun::alloc_tun(const std::string &if_name)
 	ifr.ifr_flags = IFF_TUN | IFF_NO_PI;
 
 	if (ioctl(_tun_handle, TUNSETIFF, &ifr) < 0) {
-			throw std::runtime_error("Failed to create virtual network interface " + if_name);
+		throw std::runtime_error("Failed to create virtual network interface " + if_name);
 	}
 	return _tun_handle;
 }

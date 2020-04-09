@@ -48,8 +48,8 @@ public:
 	}
 
 	static std::vector<uint8_t> generate_tcp_packet(const tcp_session * session,
-					  const uint8_t *data, size_t datalen,
-					  int syn, int ack, int fin, int rst, int psh)
+													const uint8_t *data, size_t datalen,
+													int syn, int ack, int fin, int rst, int psh)
 	{
 		size_t len;
 		struct tcphdr *tcp;
