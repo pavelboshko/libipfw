@@ -1,0 +1,11 @@
+# тут нужно доработать чтобы получился rootCA.crt аналогичным mitmproxy-ca.pem
+openssl genrsa -out rootCA.key 2048
+openssl req -x509 -new -key rootCA.key -days 10000 -out rootCA.crt -config ssl.conf 
+openssl x509 -in rootCA.crt -text -noout
+
+openssl genrsa -out tls-mobile-anon.securitycode.ru.key 2048
+openssl req -new -sha256 -out tls-mobile-anon.securitycode.ru.csr -key tls-mobile-anon.securitycode.ru.key -config ssl.conf 
+openssl req -text -noout -in tls-mobile-anon.securitycode.ru.csr 
+openssl x509 -req -in tls-mobile-anon.securitycode.ru.csr -CA  mitmproxy-ca.pem -CAkey  mitmproxy-ca.pem -CAcreateserial -out tls-mobile-anon.securitycode.ru.crt -days 5000  -extensions req_ext  -extfile ssl.conf
+
+cat tls-mobile-anon.securitycode.ru.crt mitmproxy-ca-cert.pem > tls-mobile-anon.securitycode.ru.p7b

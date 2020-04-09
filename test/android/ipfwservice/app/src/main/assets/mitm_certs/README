@@ -1,0 +1,9 @@
+openssl genrsa -out rootCA.key 2048
+openssl req -x509 -new -key rootCA.key -days 10000 -out rootCA.crt -config ssl.conf 
+openssl x509 -in rootCA.crt -text -noout
+
+openssl genrsa -out tls-mobile-anon.securitycode.ru.key 2048
+openssl req -new -sha256 -out tls-mobile-anon.securitycode.ru.csr -key tls-mobile-anon.securitycode.ru.key -config ssl.conf 
+openssl req -text -noout -in tls-mobile-anon.securitycode.ru.csr 
+openssl x509 -req -in tls-mobile-anon.securitycode.ru.csr -CA rootCA.crt -CAkey rootCA.key -CAcreateserial -out tls-mobile-anon.securitycode.ru.crt -days 5000  -extensions req_ext  -extfile ssl.conf
+

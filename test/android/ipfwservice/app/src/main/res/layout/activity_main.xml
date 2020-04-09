@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/resource_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24dp"
+            android:text="" />
+
+        <Button
+            android:id="@+id/tls_client_one_side"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="tls-mobile-anon.securitycode.ru" />
+
+        <Button
+            android:id="@+id/tls_client_two_side"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="tls-mobile.securitycode.ru" />
+
+        <Button
+            android:id="@+id/tls_client_stop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Stop" />
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
